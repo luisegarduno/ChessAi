@@ -9,11 +9,12 @@
 ### Instructions
 
 To run locally:
-1. Compile program with the following command:
-  - `$ g++ *.cpp *.h -std=c++17 -o EnigmaChess.o`
-2. Run the generated file:
-  - `$ ./EnigmaChess.o`
+1. Compile program with the following command: `$ g++ *.cpp *.h -std=c++17 -o EnigmaChess.o`
+2. Run the generated file: `$ ./EnigmaChess.o`
 
+<br></br>
+
+----------------
 
 (_at the moment_): Program creates a board using a FEN string that is defined in `main.cpp`.
 
