@@ -15,8 +15,14 @@ EnigmaChess is a chess engine with clean & efficient code.
 
 
 ## Instructions:
-1.) Compile the program (`$ g++ *.cpp *.h -std=c++17 -o EnigmaChess.o`)     
-2.) Run the generated file (`$ ./EnigmaChess.o`)
+__Option 1 (fastest)__
+1.) Run the included build (`$ ./EnigmaEngine`)     
+
+__Option 2 (fresh build)__
+1.) In line 14 of `main.cpp`, replace _true_ with _false_     
+2.) Compile the program (`$ g++ *.cpp *.h -std=c++17 -o EnigmaEngine`)     
+2.) Run the generated file (`$ ./EnigmaEngine`)
+
 
 <br></br>
 
