@@ -4,13 +4,19 @@
 
 ------------------------------------
 
-## _Enigma Chess_: A chess engine with clean & efficient code.
+# _Enigma Chess_
 
-### Instructions
+EnigmaChess is a chess engine with clean & efficient code. 
 
-To run locally:
-1. Compile program with the following command: `$ g++ *.cpp *.h -std=c++17 -o EnigmaChess.o`
-2. Run the generated file: `$ ./EnigmaChess.o`
+## Prerequisites:
+- Recommended - __Shell__: Bash, __OS__: Ubuntu v20.04
+- Have the following packages installed: C++
+  - `$ sudo apt install build-essential`
+
+
+## Instructions:
+1.) Compile the program (`$ g++ *.cpp *.h -std=c++17 -o EnigmaChess.o`)     
+2.) Run the generated file (`$ ./EnigmaChess.o`)
 
 <br></br>
 
