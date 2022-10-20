@@ -1,0 +1,43 @@
+name: build-pr
+
+on:
+  #push:
+    #branches: [main]
+  pull_request:
+    branches: [main]
+      
+jobs:
+  EnigmaChess:
+    name: ${{matrix.config.name}}
+    runs-on: ${{matrix.config.os}}
+    env:
+      COMPILER: ${{matrix.config.compiler}}
+      COMP: ${{matrix.config.comp}}
+      CXXFLAGS: "-Werror"
+    strategy:
+      matrix:
+        config:
+          - {
+            os: ubuntu-20.04,
+            name: "Ubuntu 20.04 GCC",
+            comp: gcc,
+            compiler: g++,
+            shell: 'bash {0}',
+            run_32bit_test: true,
+            run_64bit_test: true,
+            run_expensive_tests: true,
+          }
+          
+    defaults:
+      run:
+        working-directory: ./
+        shell: ${{matrix.config.shell}}
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+
+      - name: Download required packages
+        run: |
+          sudo apt update
+          sudo apt install expect g++-multilib qemu-user valgrind
