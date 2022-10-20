@@ -11,7 +11,7 @@
 
 using namespace std;
 
-#define TEST true
+#define TEST false
 
 // Runs test.cpp using Catch2 library
 int runCatchTests(int argc, char * argv[]){
@@ -27,8 +27,8 @@ int main(int argc, char * argv[]){
     ChessBoard * board = new ChessBoard();
 
     // Display empty board
-    board->display();
-    cout << "\n\t------------------------------\n" << endl;
+    //board->display();
+    //cout << "\n\t------------------------------\n" << endl;
 
     string fen = "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8";
     board->loadFEN(fen);

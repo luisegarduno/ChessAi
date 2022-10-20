@@ -171,6 +171,19 @@ void ChessBoard::strip_FEN(std::string s){
     else if(s[i] != '"') {v.push_back(str); str = "";}
   }
 
+  std::cout << "\n======= FEN Details =======" << endl;
+  std::cout << "--> Imported board: " << v[0] << std::endl;
+
+  if(v[1] == "w") std::cout << "-> Player turn: White" << std::endl;
+  if(v[1] == "b") std::cout << "-> Player turn: Black" << std::endl;
+
+  std::cout << "-> Castling?: " << v[2] << std::endl;
+  std::cout << "-> En passant?: " << v[3] << std::endl;
+  std::cout << "-> # of Consecutive moves: " << v[4] << std::endl;
+  std::cout << "-> Move count: " << v[5] << std::endl;
+
+  std::cout << std::endl;
+
   setFEN(v[0]);
 }
 

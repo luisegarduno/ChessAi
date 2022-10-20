@@ -37,6 +37,6 @@ Each square is assigned a number between 0-63. Once the initial board is created
 - S = Starting index location for the piece you would like to move.
 - E = End index location for where you would like to move the piece.
 
-Example: if you would like to move the white pawn from c2 to c3, then S=10, E=18.
+Example: [1] To move the white pawn from c2 to c3, then S=10, E=18. [2] To move the white pawn from g2 to g3, then S=14, E=22.
 
-** Making a user input moves in this type of notation is very confusing. I also believe that the only s & e values that work are s=10 & e=18. Please note that both of these issues are something that i'm working on fixing. Once fixed, the program will be using the current standard for chess notation: algebraic notation. 
+** Making a user input moves in this type of notation is very confusing. I also believe that the only pieces that can be moved at the moment are the pawns in the 2nd. Please note that both of these issues are something that i'm working on fixing. Once fixed, the program will be using the current standard for chess notation: algebraic notation. 
