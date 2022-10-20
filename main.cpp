@@ -11,7 +11,7 @@
 
 using namespace std;
 
-#define TEST false
+#define TEST true
 
 // Runs test.cpp using Catch2 library
 int runCatchTests(int argc, char * argv[]){
