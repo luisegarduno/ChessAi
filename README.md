@@ -1,8 +1,9 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/30121656/195773070-262469d6-dc1d-425a-bf6b-726606e19ee5.png" width="500" />
-</p>
-
-------------------------------------
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/30121656/195773070-262469d6-dc1d-425a-bf6b-726606e19ee5.png" width="300" />
+  <br></br>
+  
+  [![EnigmaChess](https://github.com/luisegarduno/EnigmaChess/actions/workflows/build.yml/badge.svg)](https://github.com/luisegarduno/EnigmaChess/actions/workflows/build.yml)
+</div>
 
 # _Enigma Chess_
 
@@ -16,12 +17,14 @@ EnigmaChess is a chess engine with clean & efficient code.
 
 ## Instructions:
 __Option 1 (fastest)__
-1.) Run the included build (`$ ./EnigmaEngine`)     
+  1. Run the included build (`$ ./EnigmaEngine`)     
+
+<br>
 
 __Option 2 (fresh build)__
-1.) In line 14 of `main.cpp`, replace _true_ with _false_     
-2.) Compile the program (`$ g++ *.cpp *.h -std=c++17 -o EnigmaEngine`)     
-2.) Run the generated file (`$ ./EnigmaEngine`)
+  1. In line 14 of *__main.cpp__*, replace _true_ with _false_     
+  2. Compile the program (`$ g++ *.cpp *.h -std=c++17 -o EnigmaEngine`)     
+  3. Run the generated file (`$ ./EnigmaEngine`)
 
 
 <br></br>
