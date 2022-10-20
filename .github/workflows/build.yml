@@ -2,8 +2,7 @@ name: EnigmaChess
 
 on:
   push:
-    branches: [master]
-
+    branches: [main]
 
 env:
   BUILD_TYPE: Release
@@ -32,6 +31,7 @@ jobs:
           echo " "
           g++ --version
           cmake --version
+
       - name: Create build environment
         #run: cmake -E make_directory ${{runner.workspace}}/build
         run:  mkdir ${{runner.workspace}}/build
