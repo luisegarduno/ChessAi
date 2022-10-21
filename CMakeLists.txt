@@ -16,4 +16,4 @@ foreach(file IN LISTS input01 input02)
 endforeach()
 
 set(CMAKE_CXX_STANDARD 17)
-add_executable(${EXE_NAME} main.cpp ChessBoard.h Piece.h test.cpp catch.hpp)
+add_executable(${EXE_NAME} main.cpp ChessBoard.h ChessBoard.cpp Piece.h test.cpp catch.hpp)
