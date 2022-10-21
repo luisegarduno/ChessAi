@@ -22,31 +22,27 @@ int main(int argc, char * argv[]){
 
   if(TEST) return runCatchTests(argc, argv);
 
-  //else{
+  // Create new + empty board 
+  ChessBoard * board = new ChessBoard();
 
-    ChessBoard * board = new ChessBoard();
+  string fen = "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8";
+  board->loadFEN(fen);
 
-    // Display empty board
-    //board->display();
-    //cout << "\n\t------------------------------\n" << endl;
+  // Display loaded-in board
+  board->display();
+  cout << "\n\t------------------------------\n" << endl;
 
-    string fen = "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8";
-    board->loadFEN(fen);
 
-    // Display loaded-in board
-    board->display();
-    cout << "\n\t------------------------------\n" << endl;
+  int s = 0, e = 0;
+  cout << "StartPos Index: "; cin >> s;
+  cout << "EndPos Index: "; cin >> e;
+  board->movePiece(s, e);
 
-    int s = 0, e = 0;
+  // Display updated board
+  board->display();
+  cout << "\n\t------------------------------\n" << endl;
 
-    cout << "StartPos Index: "; cin >> s;
-    cout << "EndPos Index: "; cin >> e;
-    board->movePiece(s, e);
-
-    // Display updated board
-    board->display();
-    cout << "\n\t------------------------------\n" << endl;
-  //} 
+  delete board;
 
   return 0;
 }

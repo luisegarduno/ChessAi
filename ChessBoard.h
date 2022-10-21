@@ -20,7 +20,6 @@ class ChessBoard{
     void strip_FEN(std::string s);
     
     void display();
-    void prettyPrint();
 
     void setFEN(std::string s);
     std::string getFEN();
@@ -33,6 +32,9 @@ class ChessBoard{
     bool checkPawn(int s, int e);
     bool checkRook(int s, int e);
 
+    void changeTurn();
+
+    char curTurn;
     ~ChessBoard();
 
   private:

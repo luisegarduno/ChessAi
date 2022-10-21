@@ -47,6 +47,10 @@
 *.vcxproj
 *vcxproj.*
 
+# CLion generated files
+cmake-build-debug/*
+cmake-build-release/*
+
 # qtcreator generated files
 *.pro.user*
 

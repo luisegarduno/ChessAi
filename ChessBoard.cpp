@@ -114,6 +114,8 @@ void ChessBoard::movePiece(int s, int e){
 
     // Remove letter from initial location
     this->m[s] = 0;
+
+    changeTurn();
   }
 
   else {
@@ -155,7 +157,6 @@ bool ChessBoard::checkRook(int s, int e){
 
   if(minH <= e && maxH >= e){}
 
-  
   return false;
 }
 
@@ -171,19 +172,24 @@ void ChessBoard::strip_FEN(std::string s){
     else if(s[i] != '"') {v.push_back(str); str = "";}
   }
 
-  std::cout << "\n======= FEN Details =======" << endl;
-  std::cout << "--> Imported board: " << v[0] << std::endl;
+  if(DEBUGS){
 
-  if(v[1] == "w") std::cout << "-> Player turn: White" << std::endl;
-  if(v[1] == "b") std::cout << "-> Player turn: Black" << std::endl;
+    std::cout << "\n======= FEN Details =======" << endl;
+    std::cout << "--> Imported board: " << v[0] << std::endl;
 
-  std::cout << "-> Castling?: " << v[2] << std::endl;
-  std::cout << "-> En passant?: " << v[3] << std::endl;
-  std::cout << "-> # of Consecutive moves: " << v[4] << std::endl;
-  std::cout << "-> Move count: " << v[5] << std::endl;
+    if(v[1][0] == 'w') std::cout << "-> Player turn: White" << std::endl;
+    if(v[1][0] == 'b') std::cout << "-> Player turn: Black" << std::endl;
 
-  std::cout << std::endl;
+    std::cout << "-> Castling?: " << v[2] << std::endl;
+    std::cout << "-> En passant?: " << v[3] << std::endl;
+    std::cout << "-> # of Consecutive moves: " << v[4] << std::endl;
+    std::cout << "-> Move count: " << v[5] << std::endl;
 
+    std::cout << std::endl;
+  }
+
+  curTurn = v[1][0];
+  
   setFEN(v[0]);
 }
 
@@ -199,6 +205,13 @@ void ChessBoard::setFEN(std::string s){
 // ----------------------------------------------------
 std::string ChessBoard::getFEN(){
   return this->startFEN;
+}
+
+// ----------------------------------------------------
+// changeTurn : Change player turn --------------------
+// ----------------------------------------------------
+void ChessBoard::changeTurn(){
+  (curTurn == 'w') ? (curTurn = 'b') : (curTurn = 'w');
 }
 
 // ----------------------------------------------------
@@ -235,6 +248,7 @@ void ChessBoard::display(){
 
   int j = 8;
   std::string aa = "\t+---+---+---+---+---+---+---+---+\n\t| ";
+  std::cout << std::endl;
 
   for(int i = 56; i >= 0; i -= 8){
     cout << aa << u[this->m[i]] << " | " << u[this->m[i+1]] << " | " << u[this->m[i+2]] << " | " << u[this->m[i+3]] << " | "
