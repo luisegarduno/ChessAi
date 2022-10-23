@@ -20,7 +20,8 @@ int runCatchTests(int argc, char * argv[]){
 
 int main(int argc, char * argv[]){
 
-  if(TEST) return runCatchTests(argc, argv);
+  // Testing (Workflow) - TDD w/ Catch
+  if(TEST && argc == 2) return runCatchTests(argc, argv);
 
   // Create new + empty board 
   ChessBoard * board = new ChessBoard();
@@ -32,11 +33,20 @@ int main(int argc, char * argv[]){
   board->display();
   cout << "\n\t------------------------------\n" << endl;
 
+  // Run user mode
+  if(argc == 1){
+    int s = 0, e = 0;
+    cout << "StartPos Index: "; cin >> s;
+    cout << "EndPos Index: "; cin >> e;
+    board->movePiece(s, e);
+  }
 
-  int s = 0, e = 0;
-  cout << "StartPos Index: "; cin >> s;
-  cout << "EndPos Index: "; cin >> e;
-  board->movePiece(s, e);
+  // Testing (Workflow) - Valgrind
+  if(argc >= 3){
+    cout << "StartPos Index: 10";
+    cout << "EndPos Index: 18";
+    board->movePiece(10, 18);
+  }
 
   // Display updated board
   board->display();
