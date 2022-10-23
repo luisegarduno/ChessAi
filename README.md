@@ -3,6 +3,8 @@
   <br></br>
   
   [![EnigmaChess](https://github.com/luisegarduno/EnigmaChess/actions/workflows/build.yml/badge.svg)](https://github.com/luisegarduno/EnigmaChess/actions/workflows/build.yml)
+  [![wakatime](https://wakatime.com/badge/user/57c8e6ad-7ce9-4067-864a-424b89ee01da/project/a1dce114-f23c-4ca0-bca1-78cda03e057e.svg)](https://wakatime.com/badge/user/57c8e6ad-7ce9-4067-864a-424b89ee01da/project/a1dce114-f23c-4ca0-bca1-78cda03e057e)
+  
 </div>
 
 # _Enigma Chess_
