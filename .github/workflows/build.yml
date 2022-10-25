@@ -42,7 +42,7 @@ jobs:
 
       - name: Executable name Environment Variable Check
         run: |
-          echo ${{env.EXE_NAME}}}
+          echo ${{env.EXE_NAME}}
           echo " "
           echo ${{runner.workspace}}
           echo " "

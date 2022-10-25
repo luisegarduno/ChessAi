@@ -43,8 +43,8 @@ int main(int argc, char * argv[]){
 
   // Testing (Workflow) - Valgrind
   if(argc >= 3){
-    cout << "StartPos Index: 10";
-    cout << "EndPos Index: 18";
+    cout << "StartPos Index: 10" << endl;
+    cout << "EndPos Index: 18" << endl;
     board->movePiece(10, 18);
   }
 

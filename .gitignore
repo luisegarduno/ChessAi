@@ -50,6 +50,7 @@
 # CLion generated files
 cmake-build-debug/*
 cmake-build-release/*
+.idea/*
 
 # qtcreator generated files
 *.pro.user*

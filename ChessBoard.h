@@ -34,6 +34,13 @@ class ChessBoard{
 
     void changeTurn();
 
+    /* @todo: finish board class
+     * @body: implement these functions
+     */
+
+    bool isCheck(int checkColor);
+    bool isCheckmate(int checkColor);
+
     char curTurn;
     ~ChessBoard();
 
