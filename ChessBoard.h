@@ -8,6 +8,7 @@
 #define CHESSBOARD_H
 
 #include "Piece.h"
+#include "PrecomputedData.h"
 #include <iostream>
 #include <unordered_map>
 
