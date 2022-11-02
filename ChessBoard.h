@@ -15,15 +15,18 @@ class ChessBoard{
 
   public:
     ChessBoard();
+    void initBoard(std::string s);
     void clearBoard();
-    void loadFEN(std::string s);
-    void strip_FEN(std::string s);
     
     void display();
 
+    // FEN functions
+    void loadFEN(std::string s);
+    void strip_FEN(std::string s);
     void setFEN(std::string s);
     std::string getFEN();
-    void initBoard(std::string s);
+
+
 
     char pieceAt(int idx);
     void movePiece(int s, int e);
@@ -34,9 +37,7 @@ class ChessBoard{
 
     void changeTurn();
 
-    /* @todo: finish board class
-     * @body: implement these functions
-     */
+    /* @todo: finish board class */
 
     bool isCheck(int checkColor);
     bool isCheckmate(int checkColor);
