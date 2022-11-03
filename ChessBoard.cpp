@@ -28,7 +28,6 @@ ChessBoard::ChessBoard(){
   if(DEBUGS) std::cout << "--> Creating empty 8x8 ChessBoard" << endl;
 
   clearBoard();
-  PrecomputedMoveData();
 
   if(DEBUGS) cout << "--> Done." << endl;
 }

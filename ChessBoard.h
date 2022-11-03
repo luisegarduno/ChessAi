@@ -27,12 +27,10 @@ class ChessBoard{
     void setFEN(std::string s);
     std::string getFEN();
 
-
-
     char pieceAt(int idx);
     void movePiece(int s, int e);
 
-    Piece pieces;
+    Chess::Piece pieces;
     bool checkPawn(int s, int e);
     bool checkRook(int s, int e);
 

@@ -9,7 +9,10 @@
 #include "catch.hpp"
 #include "ChessBoard.h"
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
 
 #define TEST true
 
@@ -24,9 +27,10 @@ int main(int argc, char * argv[]){
   if(TEST && argc == 2) return runCatchTests(argc, argv);
 
   // Create new + empty board 
+  PrecomputedMoveData();
   ChessBoard * board = new ChessBoard();
 
-  string fen = "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8";
+  std::string fen = "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8";
   board->loadFEN(fen);
 
   // Display loaded-in board

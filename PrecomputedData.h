@@ -4,22 +4,11 @@
  * Created by Luis G.
  */
 
-//#ifndef PRECOMPUTEDDATA_H
-//#define PRECOMPUTEDDATA_H
-
 #include <iostream>
 #include <vector>
 
 // For every index location: store number of squares to edge
 static std::vector<std::vector<int>> nSquaresToEdge(64);
-
-/*
-class PrecomputedData {
-  public:
-    static void PrecomputedMovedData();
-    static void printAllSquaresToEdge();
-};
-*/
 
 static void PrecomputedMoveData(){
 
@@ -74,5 +63,3 @@ static void printAllSquaresToEdge(){
     std::cout << "\t<============>" << std::endl;
   }
 }
-
-//#endif // PRECOMPUTEDDATA_H
