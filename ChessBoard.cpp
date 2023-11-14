@@ -21,9 +21,9 @@ using std::endl;
 using std::vector;
 using std::unordered_map;
 
-// ----------------------------------------------------
-// Default Constructor : Dynamically creates a 2D Array
-// ----------------------------------------------------
+/**
+ * \brief Default constructor : Dynamically creates a 2D array
+ */
 ChessBoard::ChessBoard(){
   if(DEBUGS) std::cout << "--> Creating empty 8x8 ChessBoard" << endl;
 
@@ -32,9 +32,10 @@ ChessBoard::ChessBoard(){
   if(DEBUGS) cout << "--> Done." << endl;
 }
 
-// ----------------------------------------------------
-// loadFEN : Load Board w/ FEN string -----------------
-// ----------------------------------------------------
+/**
+ * \brief Load board with FEN string
+ * \param s FEN string
+ */
 void ChessBoard::loadFEN(std::string s){
   strip_FEN(s);
   std::string fen_str = getFEN();
@@ -67,9 +68,11 @@ void ChessBoard::loadFEN(std::string s){
   if(DEBUGS) cout << "\n--> FEN Successfully loaded onto board" << endl;
 }
 
-// ----------------------------------------------------
-// pieceAt : return piece at location row,col ---------
-// ----------------------------------------------------
+/**
+ * \brief Return piece at location row, column
+ * \param idx index location (int)
+ * \return char (piece)
+ */
 char ChessBoard::pieceAt(int idx){
   int t = this->m[idx];
 
@@ -94,9 +97,11 @@ char ChessBoard::pieceAt(int idx){
   return ' ';
 }
 
-// ----------------------------------------------------
-// movePiece : move piece to new location on board ----
-// ----------------------------------------------------
+/**
+ * \brief Move piece to new location on board
+ * \param s Start location (int s)
+ * \param e End location (int e)
+ */
 void ChessBoard::movePiece(int s, int e){
 
   if(s < 0 || s > 63 || e < 0 || e > 63)
@@ -123,9 +128,12 @@ void ChessBoard::movePiece(int s, int e){
   }
 }
 
-// ----------------------------------------------------
-// checkPawn : Check to see if valid pawn move --------
-// ----------------------------------------------------
+/**
+ * \brief Check to see if valid pawn move
+ * \param s Start location (int s)
+ * \param e End location (int e)
+ * \return true/false (boolean)
+ */
 bool ChessBoard::checkPawn(int s, int e){
 
   // Valid Pawn Move
@@ -146,9 +154,12 @@ bool ChessBoard::checkPawn(int s, int e){
   return false;
 }
 
-// ----------------------------------------------------
-// checkRook : Check to see if valid Rook move --------
-// ----------------------------------------------------
+/**
+ * \brief Check to see if valid Rook move
+ * \param s Start location (int s)
+ * \param e End location (int e)
+ * \return true/false (boolean)
+ */
 bool ChessBoard::checkRook(int s, int e){
 
   int row = s / 8;
@@ -161,9 +172,10 @@ bool ChessBoard::checkRook(int s, int e){
 }
 
 
-// ----------------------------------------------------
-// strip_FEN : Breakdown FEN into sections ------------
-// ----------------------------------------------------
+/**
+ * \brief Breakdown FEN into sections
+ * \param s FEN string
+ */
 void ChessBoard::strip_FEN(std::string s){
   std::string str = ""; std::vector<std::string> v;
       
@@ -193,37 +205,39 @@ void ChessBoard::strip_FEN(std::string s){
   setFEN(v[0]);
 }
 
-// ----------------------------------------------------
-// setFEN : Initialize/Declare FEN String -------------
-// ----------------------------------------------------
+/**
+ * \brief Intilize/Declare FEN String
+ * \param s FEN string
+ */
 void ChessBoard::setFEN(std::string s){
   this->startFEN = s;
 }
 
-// ----------------------------------------------------
-// getFEN : Retrieve FEN String -----------------------
-// ----------------------------------------------------
+/**
+ * \brief Retrieve FEN String
+ * \return FEN string
+ */
 std::string ChessBoard::getFEN(){
   return this->startFEN;
 }
 
-// ----------------------------------------------------
-// changeTurn : Change player turn --------------------
-// ----------------------------------------------------
+/**
+ * \brief Change player turn
+ */
 void ChessBoard::changeTurn(){
   (curTurn == 'w') ? (curTurn = 'b') : (curTurn = 'w');
 }
 
-// ----------------------------------------------------
-// clearBoard : Completely wipe board -----------------
-// ----------------------------------------------------
+/**
+ * \brief Completely wipe board
+ */
 void ChessBoard::clearBoard(){
     this->m.clear();
 }
 
-// ----------------------------------------------------
-// display : Pretty prints the Chess Board ------------
-// ----------------------------------------------------
+/**
+ * \brief Pretty prints the Chess Board
+ */
 void ChessBoard::display(){
 
   std::unordered_map<int, const char *> u;
@@ -259,11 +273,10 @@ void ChessBoard::display(){
   cout <<   "\t  a   b   c   d   e   f   g   h\n" << endl;
 }
 
-// ----------------------------------------------------
-// Default Deconstructor : Deallocate dynamic memory --
-// ----------------------------------------------------
+/**
+ * \brief Default Destructor : Deallocate dynamic memory
+ */
 ChessBoard::~ChessBoard(){
   if(DEBUGS) cout << "~~> Deallocating ChessBoard from Memory" << endl;
   if(DEBUGS) cout << "~~> Done :)" << endl;
 }
-

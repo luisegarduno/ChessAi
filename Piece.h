@@ -7,6 +7,9 @@
 #ifndef PIECE_H
 #define PIECE_H
 
+/**
+ * \brief Chess namespace to store all the classes and functions of the game.
+ */
 namespace Chess {
   class Piece {
     public:
