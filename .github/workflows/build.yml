@@ -68,7 +68,7 @@ jobs:
 
       - name: Run the project - Valgrind
         working-directory: ${{runner.workspace}}/build
-        run: valgrind --error-exitcode=42 --errors-for-leak-kinds=all --leak-check=full ./EnigmaEngine 10 18 1>/dev/null
+        run: valgrind --error-exitcode=42 --errors-for-leak-kinds=all --leak-check=full ./$EXE_NAME 10 18 1>/dev/null
    
       - name: Copy output files to artifact directory
         working-directory: ${{runner.workspace}}/build
